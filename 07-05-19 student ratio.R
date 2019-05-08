@@ -61,5 +61,5 @@ figure <- ggarrange(hi, lo,
 
 annotate_figure(figure,
                 top = text_grob(label = "Which countries are most/least improved in student-teacher ratio for Upper Secondary Education?", size = 18, face = "bold"),
-                bottom = text_grob(label = "One outlier removed to better show differences between countries.",
+                bottom = text_grob(label = "One outlier (Eritrea) removed to better show differences between countries.",
                                    hjust = 1, x = 1, face = "italic"))
