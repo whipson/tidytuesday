@@ -45,7 +45,7 @@ worst_fitting <- bird_counts_aug %>%
   select(species) %>%
   distinct()
 
-bird_counts_aug %>%
+p <- bird_counts_aug %>%
   inner_join(worst_fitting, by = "species") %>%
   gather(parameter, value, -year, -species, -.resid) %>%
   ggplot(aes(x = year, y = value, color = parameter)) +
@@ -65,3 +65,5 @@ bird_counts_aug %>%
         strip.text = element_text(size = 16),
         plot.subtitle = element_text(size = 13),
         plot.title = element_text(hjust = .5, size = 22, face = "bold"))
+
+ggsave("19-06-18 bird count.png")
